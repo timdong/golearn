@@ -39,23 +39,22 @@ func main() {
 			c.String(http.StatusOK, err.Error())
 		})
 	}
-	/*
-		// update
-		user.Name = "astaxie"
-		num, err := o.Update(&user)
 
-		// read one
-		u := User{Id: user.Id}
-		err = o.Read(&u)
+	// update
+	user.Name = "astaxie"
+	id, err = o.Update(&user)
 
-		// delete
-		num, err = o.Delete(&u)
-	*/
+	// read one
+	u := User{Id: user.Id}
+	err = o.Read(&u)
+
+	// delete
+	//num, err = o.Delete(&u)
 
 	s := strconv.FormatInt(id, 16)
 	//fmt.Printf("%T, %v\n", s, s)
 	router.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hello slene id = "+s)
+		c.String(http.StatusOK, "Hello slene id = "+s+"\n Name = "+u.Name)
 	})
 
 	//fmt.Print(string(id))
