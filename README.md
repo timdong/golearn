@@ -9,4 +9,6 @@ Tim study golang, build example,test, etc.
 
 #Goal
 
+Added by tim.dong
+
 study go lang 
